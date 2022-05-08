@@ -16,7 +16,7 @@ body {
     gap:2rem;
     margin:2rem;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-template-rows:100px repeat(5, 1fr);
+    grid-template-rows:100px repeat(7, auto);
     grid-auto-rows:300px;
     justify-content:center;
     align-self:center;
