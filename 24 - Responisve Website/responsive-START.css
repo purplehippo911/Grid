@@ -12,3 +12,204 @@ img {
   max-width: 100%;
 }
 
+.wrapper {
+  display:grid;
+  gap:2rem;
+}
+
+.top {
+  display:grid;
+  gap:2rem;
+  grid-template-areas: 
+  "hero hero price1"
+  "hero hero price2";
+}
+
+.hero {
+  grid-area:hero;
+  min-height:40rem;
+  background:white url(images/taco.jpg);
+  background-size:cover;
+  background-position:bottom right;
+  padding:5rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.hero > * {
+  background:var(--yellow);
+}
+
+.cta{
+  display:grid;
+  align-items:center;
+  justify-items:center;
+  align-content:center;
+}
+
+.cta p {
+  margin:0;
+}
+
+.cta1 {
+  grid-area:price1;
+  background:var(--yellow);
+}
+
+.cta2 {
+  grid-area:price2;
+  background:var(--yellow);
+}
+
+.price {
+  font-size:60px;
+  font-weight:300;
+}
+
+.menu ul {
+  display:grid;
+  gap:1rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding:0;
+  list-style:none;
+}
+
+.menu a {
+  background:var(--yellow);
+  display:block;
+  text-decoration:none;
+  padding:1rem;
+  text-align:center;
+  color:var(--black);
+  text-transform:uppercase;
+  font-size:2rem;
+}
+
+[aria-controls="menu-list"] {
+  display:none;
+}
+
+.features {
+  display:grid;
+  gap:2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.feature {
+  background:white;
+  padding:1rem;
+  border:1px solid white;
+  text-align:center;
+  box-shadow:0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature .icon {
+  font-size:5em;
+}
+
+.feature p {
+  color:rgba(0, 0, 0, 0.5);
+}
+
+.about {
+  padding:50px;
+  background:white;
+  display:grid;
+  grid-template-columns: 400px 1fr;
+  align-items:center;
+  justify-items:center;
+}
+
+.gallery {
+  display:grid;
+  gap:2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+
+.gallery img {
+  width:100%;
+}
+
+.gallery h2 {
+ grid-column:1 / -1;
+ display:grid;
+ gap:2rem;
+ grid-template-columns: 1fr auto 1fr;
+ align-items:center;
+ text-transform:uppercase; 
+}
+
+.gallery h2:before, .gallery h2:after {
+  display: block;
+  content: '';
+  height:10px;
+  background:linear-gradient(to var(--direction, left),
+   var(--yellow), transparent);
+}
+
+.gallery h2:after {
+  --direction:right;
+}
+
+[aria-expanded="false"]  .close {
+  display:none;
+}
+
+[aria-expanded="true"]  .close {
+  display:inline-block;
+}
+
+[aria-expanded="true"]  .open {
+  display:none;
+}
+
+@media (max-width:1000px) {
+  .menu {
+   order:-1;
+   perspective:800px;
+  }
+  
+  [aria-controls="menu-list"] {
+    display:block;
+    margin-bottom:1rem;
+  }
+
+  .menu ul {
+    max-height:0;
+    overflow:hidden;
+    transform:rotateX(90deg);
+    transition:all 0.5s;
+  }
+
+  [aria-expanded="true"] ~ ul {
+    display:grid;
+    max-height:500px;
+    transform:rotateX(0);
+  }
+  
+}
+
+@media (max-width:700px) {
+  .top {
+    grid-template-areas:
+    "hero hero"
+    "price1 price2";
+  }    
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:500px) {
+  .top {
+    grid-template-areas:
+    "hero"
+    "price1"
+    "price2"
+  } 
+}
+
