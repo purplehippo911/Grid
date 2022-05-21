@@ -47,6 +47,11 @@ img {
   align-items:center;
   justify-items:center;
   align-content:center;
+  transition:0.5s ease-in-out;
+}
+
+.cta:hover {
+  background:aliceblue;
 }
 
 .cta p {
@@ -103,6 +108,12 @@ img {
   border:1px solid white;
   text-align:center;
   box-shadow:0 0 4px rgba(0, 0, 0, 0.1);
+  transition:0.5s;
+}
+
+.feature:hover {
+  background:purple;
+  color:aliceblue;
 }
 
 .feature .icon {
