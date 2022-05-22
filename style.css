@@ -63,7 +63,7 @@ body {
     background:var(--black);
 }
 
-.item3, .item5 {
+.item3, .item5, .item7 {
     border:5px solid var(--yellow);
 }
 
