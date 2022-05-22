@@ -51,7 +51,7 @@ body {
     display:grid;
     text-decoration: none;
     text-transform:uppercase;
-    color:aliceblue;
+    color:var(--black);
     opacity:1;
     justify-content: center;
     align-content:center;
